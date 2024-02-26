@@ -1,0 +1,49 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Change align-items to flex-start to align content at the top */
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px; /* Adjust the margin-top as needed for spacing from the top */
+}
+
+.my-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+.my-table th,
+.my-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.my-table th {
+  background-color: #f2f2f2;
+}
+
+.my-table td {
+  text-align: left;
+}
+
+.my-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.my-table tbody tr:hover {
+  background-color: #f0f0f0;
+}
+
+.my-table td.utilization {
+  color: var(--utilization-color);
+  font-weight: var(--utilization-font-weight);
+}

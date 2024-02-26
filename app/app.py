@@ -23,6 +23,8 @@ logging.getLogger('').addHandler(file_handler)
 
 
 app = Flask(__name__)
+# Add this line to serve static files
+app.config['STATIC_FOLDER'] = 'static'
 
 # Load infor from environment variable
 apic = os.getenv("apic")

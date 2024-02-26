@@ -1,53 +1,47 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="refresh" content="300" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memory Information</title>
-    <style>
-      table {
-        border-collapse: collapse;
-        width: 50%;
-        margin-top: 20px;
-      }
-      th,
-      td {
-        border: 1px solid #dddddd;
-        text-align: left;
-        padding: 8px;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-    </style>
+    <title>Dev/Shm Information</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
   </head>
   <body>
-    <h1>DEV/SHM INFORMATION</h1>
+    <div class="container">
+      <h1>DEV/SHM INFORMATION</h1>
 
-    <table>
-      <thead>
-        <tr>
-          <th>Attribute</th>
-          <th>Value</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Avail</td>
-          <td>{{ avail }}</td>
-        </tr>
-        <tr>
-          <td>Used</td>
-          <td>{{ used }}</td>
-        </tr>
-        <tr>
-          <td>Utilization</td>
-
-          <td style="color: {{ color }}; font-weight: {{ font_weight }};">
-            {{ "%.2f" % utilization_percentage }}%
-          </td>
-        </tr>
-      </tbody>
-    </table>
+      <table class="my-table">
+        <thead>
+          <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Avail</td>
+            <td>{{ avail }}</td>
+          </tr>
+          <tr>
+            <td>Used</td>
+            <td>{{ used }}</td>
+          </tr>
+          <tr>
+            <td>Utilization</td>
+            <td
+              class="utilization"
+              style="color: {{ color }}; font-weight: {{ font_weight }};"
+            >
+              {{ "%.2f" % utilization_percentage }}%
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </body>
 </html>
