@@ -33,6 +33,7 @@ apic = os.getenv("apic")
 username = os.getenv("username")
 password = os.getenv("password")
 nodeid = os.getenv("nodeid")
+site = os.getenv("site")
 flaskport = os.getenv("flaskport")
 
 # Replace this URL with your actual API endpoint
@@ -71,8 +72,8 @@ def get_memory_data(auth_token):
 def calculate_utilization_color(memory_data):
     used = float(memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['used'])
     avail = float(memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['avail'])
-    utilization_percentage = (used / (used + avail)) * 100
-    #utilization_percentage = 86
+    #utilization_percentage = (used / (used + avail)) * 100
+    utilization_percentage = 86
     if utilization_percentage > 85:
         color = 'red'
         font_weight = 'bold'
@@ -88,7 +89,7 @@ def index():
         memory_data = get_memory_data(auth_token)
         utilization_percentage, color, font_weight = calculate_utilization_color(memory_data)
 
-        return render_template('index.html', avail=memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['avail'],
+        return render_template('index.html', site=site, nodeid=nodeid, avail=memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['avail'],
                            used=memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['used'],
                            utilization_percentage=utilization_percentage, color=color, font_weight=font_weight)
     except Exception as e:
