@@ -1,6 +1,10 @@
 # ACI Leaf Switch Dev/Shm Utilization Monitoring.
 
-Should run it in python3 virtual environment.
+Should run it in python3 virtual environment. The website is auto refresh by default in 300 seconds. To change it, find index.html file in folder app/templates replace 300 with number of second you want.
+
+```
+ <meta http-equiv="refresh" content="300" />
+```
 
 **Install environment**
 
