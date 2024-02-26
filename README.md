@@ -17,7 +17,9 @@ flaskport="5001" # flask app port
 
 **To run:**
 
+```
 python3 app.py
+```
 
 **Sample result showing on web-browser:**
 
