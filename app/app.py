@@ -1,6 +1,8 @@
 
 from flask import Flask, render_template
 import requests
+from dotenv import load_dotenv
+load_dotenv()
 
 app = Flask(__name__)
 apic = '192.168.8.2'
