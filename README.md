@@ -1,6 +1,7 @@
 # ACI Leaf Switch Dev/Shm Utilization Monitoring.
 
 **Create .env file**
+
 Create a .env file home folder (same level with app folder.)
 
 Sample .env content:
