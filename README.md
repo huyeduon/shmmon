@@ -1,5 +1,13 @@
 # ACI Leaf Switch Dev/Shm Utilization Monitoring.
 
+Should run it in python3 virtual environment.
+
+**Install environment**
+
+```
+pip install -r requirements.txt
+```
+
 **Create .env file**
 
 Create a .env file home folder (same level with app folder.)
