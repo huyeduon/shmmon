@@ -1,5 +1,7 @@
 # ACI Leaf Switch Dev/Shm Utilization Monitoring.
 
+This code runs a Flask web-server, it auto call API to APIC and check for dev/shm utilization of the switch whose ID is define in .env file.
+
 Should run it in python3 virtual environment. The website is auto refreshed by default in 300 seconds. To refresh frequency, go to file index.html in the folder app/templates/ replace 300 with number of second you want.
 
 ```
