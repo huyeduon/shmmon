@@ -1,14 +1,16 @@
-
 from flask import Flask, render_template
 import os
+from datetime import datetime
 import requests
 from dotenv import load_dotenv
 load_dotenv()
 
 import logging
-
 # Configure logging
 logging.basicConfig(level=logging.INFO)
+
+# Create Flask instance
+app = Flask(__name__)
 
 # Create a file handler
 file_handler = logging.FileHandler('app.log')
@@ -22,9 +24,9 @@ file_handler.setFormatter(formatter)
 logging.getLogger('').addHandler(file_handler)
 
 
-app = Flask(__name__)
-# Add this line to serve static files
+# Set STATIC_FOLDER in app configuration
 app.config['STATIC_FOLDER'] = 'static'
+
 
 # Load infor from environment variable
 apic = os.getenv("apic")
@@ -54,7 +56,7 @@ def authenticate():
         return auth_token
     except requests.exceptions.HTTPError as e:
         logging.error(f"An error occurred during authentication: {e}")
-        raise  # Re-raise the exception to propagate it further
+        return render_template('error.html', error_message="An unexpected error occurred.")
 
 def get_memory_data(auth_token):
     try:
@@ -64,13 +66,13 @@ def get_memory_data(auth_token):
         return memory_response.json()
     except requests.exceptions.HTTPError as e:
         logging.error(f"An error occurred during memory data retrieval: {e}")
-        raise  # Re-raise the exception to propagate it further
+        return render_template('error.html', error_message="An unexpected error occurred.")
 
 def calculate_utilization_color(memory_data):
     used = float(memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['used'])
     avail = float(memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['avail'])
     utilization_percentage = (used / (used + avail)) * 100
-    #utilization_percentage = 84
+    #utilization_percentage = 86
     if utilization_percentage > 85:
         color = 'red'
         font_weight = 'bold'

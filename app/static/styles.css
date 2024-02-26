@@ -47,3 +47,13 @@ body {
   color: var(--utilization-color);
   font-weight: var(--utilization-font-weight);
 }
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.blinking {
+  animation: blink 1s infinite;
+}

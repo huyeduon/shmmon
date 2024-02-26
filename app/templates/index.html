@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta http-equiv="refresh" content="300" />
+    <meta http-equiv="refresh" content="10" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dev/Shm Information</title>
     <link
@@ -34,8 +34,7 @@
           <tr>
             <td>Utilization</td>
             <td
-              class="utilization"
-              style="color: {{ color }}; font-weight: {{ font_weight }};"
+              style="color: {{ color }}; font-weight: {{ font_weight }}; {% if utilization_percentage > 85 %}animation: blink 1s infinite;{% endif %}"
             >
               {{ "%.2f" % utilization_percentage }}%
             </td>

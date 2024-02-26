@@ -178,3 +178,7 @@ cython_debug/
 
 # Requests library
 requests/
+
+# app log
+
+app.log
