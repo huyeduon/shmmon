@@ -72,8 +72,8 @@ def get_memory_data(auth_token):
 def calculate_utilization_color(memory_data):
     used = float(memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['used'])
     avail = float(memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['avail'])
-    #utilization_percentage = (used / (used + avail)) * 100
-    utilization_percentage = 86
+    utilization_percentage = (used / (used + avail)) * 100
+    #utilization_percentage = 86
     if utilization_percentage > 85:
         color = 'red'
         font_weight = 'bold'
