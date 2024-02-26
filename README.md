@@ -23,6 +23,6 @@ python3 app.py
 
 **Sample result showing on web-browser:**
 
-:+1: Utilization number will be bliking if higher than 85%.
+:+1: Utilization number will be blinking if higher than 85%.
 
 ![Sample result leaf dev/shm information](/assets/images/utilization.png)
