@@ -19,3 +19,5 @@ flaskport="5001" # flask app port
 **To run:**
 
 python3 app.py
+
+![Screenshot of a comment on a GitHub issue showing an image, added in the Markdown, of an Octocat smiling and raising a tentacle.](https://myoctocat.com/assets/images/base-octocat.svg)
