@@ -1,5 +1,6 @@
-# shmmon
+# ACI Leaf Switch Dev/Shm Utilization Monitoring.
 
+**Create .env file**
 Create a .env file home folder (same level with app folder.)
 
 Sample .env content:
@@ -14,6 +15,6 @@ nodeid="201" # node id of the node you want to monitor
 
 flaskport="5001" # flask app port
 
-To run:
+**To run:**
 
 python3 app.py
