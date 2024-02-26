@@ -182,3 +182,5 @@ requests/
 # app log
 
 app.log
+
+.DS_Store
