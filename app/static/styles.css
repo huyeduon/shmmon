@@ -33,6 +33,7 @@ body {
 
 .my-table td {
   text-align: left;
+  white-space: nowrap;
 }
 
 .my-table tbody tr:nth-child(even) {
