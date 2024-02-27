@@ -28,14 +28,16 @@ flaskport="5001" # flask app port
 ```
 
 **Edit config.yaml file**
-Fill-in node-ID and Site Name, this script only support same one single site. Site Name must be same.
+Fill-in node-ID and Site Name, Pod ID
 
 ```
 nodes:
   - id: 201
     site: Site-1
+    pod: 1
   - id: 202
     site: Site-1
+    pod: 1
 
 ```
 
