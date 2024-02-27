@@ -184,3 +184,4 @@ requests/
 app.log
 
 .DS_Store
+pyvenv.cfg
