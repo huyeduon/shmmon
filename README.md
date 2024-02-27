@@ -51,4 +51,4 @@ python3 app.py
 
 :+1: Utilization number will be blinking if higher than 85%.
 
-![Sample result leaf dev/shm information](/assets/images/utilization1.png)
+![Sample result leaf dev/shm information](/assets/images/utilization.png)
