@@ -8,6 +8,8 @@ body {
   align-items: flex-start; /* Change align-items to flex-start to align content at the top */
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  background-color: #282c34; /* Dark background color */
+  color: #ffffff; /* Light text color */
 }
 
 .container {
@@ -23,12 +25,13 @@ body {
 
 .my-table th,
 .my-table td {
-  border: 1px solid #ddd;
-  padding: 8px;
+  border: 1px solid #ffffff; /* White border */
+  padding: 12px; /* Increased padding for better spacing */
 }
 
 .my-table th {
-  background-color: #f2f2f2;
+  background-color: #61dafb; /* Blue header background color */
+  color: #282c34; /* Dark text color for header */
 }
 
 .my-table td {
@@ -37,11 +40,11 @@ body {
 }
 
 .my-table tbody tr:nth-child(even) {
-  background-color: #f9f9f9;
+  background-color: #38444d; /* Dark background color for even rows */
 }
 
 .my-table tbody tr:hover {
-  background-color: #f0f0f0;
+  background-color: #536878; /* Slightly lighter background color on hover */
 }
 
 .my-table td.utilization {
