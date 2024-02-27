@@ -1,14 +1,7 @@
 nodes:
-<<<<<<< HEAD
-  - id: 101
-    site: Metro
-  - id: 701
-    site: Metro
-=======
   - id: 201
     site: Site-1
     pod: 1
   - id: 202
     site: Site-1
     pod: 1
->>>>>>> 537b56259c9318859df5cca00dfa334f61acf8af
