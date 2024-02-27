@@ -24,9 +24,19 @@ Sample .env content:
 apic="192.168.20.100" # apic ip address (replace with your actual IP)
 username="admin" # apic username
 password="mysecurepassword"
-nodeid="201" # node id of the node you want to monitor
-site="Site-1"
 flaskport="5001" # flask app port
+```
+
+**Edit config.yaml file**
+Fill-in node-ID and Site Name, this script only support same one single site. Site Name must be same.
+
+```
+nodes:
+  - id: 201
+    site: Site-1
+  - id: 202
+    site: Site-1
+
 ```
 
 **To run:**

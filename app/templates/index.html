@@ -13,32 +13,31 @@
   </head>
   <body>
     <div class="container">
-      <h1>{{site}} Leaf-{{nodeid}} dev/shm info</h1>
-
+      <h1>Dev/Shm Information for All Nodes</h1>
       <table class="my-table">
         <thead>
           <tr>
-            <th>Attribute</th>
-            <th>Value</th>
+            <th>Node ID</th>
+            <th>Site</th>
+            <th>Available</th>
+            <th>Used</th>
+            <th>Utilization</th>
           </tr>
         </thead>
         <tbody>
+          {% for node_info in nodes %}
           <tr>
-            <td>Avail</td>
-            <td>{{ avail }}</td>
-          </tr>
-          <tr>
-            <td>Used</td>
-            <td>{{ used }}</td>
-          </tr>
-          <tr>
-            <td>Utilization</td>
+            <td>Leaf-{{ node_info.nodeid }}</td>
+            <td>{{ node_info.site }}</td>
+            <td>{{ node_info.avail }}</td>
+            <td>{{ node_info.used }}</td>
             <td
-              style="color: {{ color }}; font-weight: {{ font_weight }}; {% if utilization_percentage > 85 %}animation: blink 1s infinite;{% endif %}"
+              style="color: {{ node_info.color }}; font-weight: {{ node_info.font_weight }}; {% if node_info.utilization_percentage > 85 %}animation: blink 1s infinite;{% endif %}"
             >
-              {{ "%.2f" % utilization_percentage }}%
+              {{ "%.2f" % node_info.utilization_percentage }}%
             </td>
           </tr>
+          {% endfor %}
         </tbody>
       </table>
     </div>
