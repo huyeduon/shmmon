@@ -1,5 +1,5 @@
 nodes:
-  - id: 201
-    site: Site-1
-  - id: 202
-    site: Site-1
+  - id: 101
+    site: Metro
+  - id: 701
+    site: Metro
