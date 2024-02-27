@@ -99,9 +99,10 @@ def index():
         for selected_node in config_data.get('nodes', []):
             nodeid = str(selected_node.get('id', ''))
             site = str(selected_node.get('site', ''))
+            podid = str(selected_node.get('pod', ''))
 
             # Update MEMORY_API_ENDPOINT based on nodeid
-            memory_api_endpoint = f'https://{apic}/api/node/mo/topology/pod-1/node-{nodeid}/sys/eqptcapacity/fspartition-dev:shm.json?query-target=self'
+            memory_api_endpoint = f'https://{apic}/api/node/mo/topology/pod-{podid}/node-{nodeid}/sys/eqptcapacity/fspartition-dev:shm.json?query-target=self'
 
             # Fetch memory data for the current node
             memory_data = get_memory_data(auth_token, memory_api_endpoint)
@@ -113,6 +114,7 @@ def index():
             nodes_data.append({
                 'site': site,
                 'nodeid': nodeid,
+                'podid': podid,
                 'avail': memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['avail'],
                 'used': memory_data['imdata'][0]['eqptcapacityFSPartition']['attributes']['used'],
                 'utilization_percentage': utilization_percentage,
